@@ -9,21 +9,17 @@ export default function App() {
   const [fruit, setFruit] = useState('banana');
   const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
 
-  // Similar to componentDidMount and componentDidUpdate:
-  
-  useEffect(() => {
-     
+  useEffect(() => { 
     document.title = count < 2 ? `Anxiety ${count} Cup Deep` : `Anxiety ${count} Cups Deep`;
   })
-  
-
-
 
   return (
     <div>
-      <p>You've had {count} {count < 2 ? "cup" : "cups"} of coffee.</p>
+      <p className="glitch">You've had {count} {count < 2 ? "cup" : "cups"} of coffee.</p>
 
-      <button onClick={() => setCount(count + 1)}>More Coffee</button>
+      <button
+        onKeyDown={(e)=>console.log(e.key)}
+        onClick={() => setCount(count + 1)}>More Coffee</button>
       <div className="coffees">
         {Array(count).fill("coffee").map(item =>
           <i aria-hidden="true" class="coffee huge icon"></i>
