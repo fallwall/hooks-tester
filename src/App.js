@@ -15,11 +15,15 @@ export default function App() {
 
   return (
     <div>
-      <p className="glitch">You've had {count} {count < 2 ? "cup" : "cups"} of coffee.</p>
+      <p>You've had {count} {count < 2 ? "cup" : "cups"} of coffee.</p>
 
       <button
+        className="ui animated button"
         onKeyDown={(e)=>console.log(e.key)}
-        onClick={() => setCount(count + 1)}>More Coffee</button>
+        onClick={() => setCount(count + 1)}>
+         <div class="visible content">More Coffee</div>
+    <div class="hidden content"><i aria-hidden="true" class="coffee icon"></i></div>
+        </button>
       <div className="coffees">
         {Array(count).fill("coffee").map(item =>
           <i aria-hidden="true" class="coffee huge icon"></i>
