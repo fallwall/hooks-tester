@@ -4,12 +4,8 @@ import './App.css';
 
 export default function App() {
   const [count, setCount] = useState(0);
-  // Declare multiple state variables
-  const [age, setAge] = useState(42);
-  const [fruit, setFruit] = useState('banana');
-  const [todos, setTodos] = useState([{ text: 'Learn Hooks' }]);
 
-  useEffect(() => { 
+  useEffect(() => {
     document.title = count < 2 ? `Anxiety ${count} Cup Deep` : `Anxiety ${count} Cups Deep`;
   })
 
@@ -19,14 +15,14 @@ export default function App() {
 
       <button
         className="ui animated button"
-        onKeyDown={(e)=>console.log(e.key)}
+        onKeyDown={(e) => console.log(e.key)}
         onClick={() => setCount(count + 1)}>
-         <div class="visible content">More Coffee</div>
-    <div class="hidden content"><i aria-hidden="true" class="coffee icon"></i></div>
-        </button>
+        <div className="visible content">More Coffee</div>
+        <div className="hidden content"><i aria-hidden="true" className="coffee icon"></i></div>
+      </button>
       <div className="coffees">
-        {Array(count).fill("coffee").map(item =>
-          <Pulse><i aria-hidden="true" class="coffee huge icon"></i></Pulse>
+        {Array(count).fill("coffee").map((item, i) =>
+          <Pulse><i aria-hidden="true" key={i} class="coffee huge icon"></i></Pulse>
         )}
       </div>
     </div>
