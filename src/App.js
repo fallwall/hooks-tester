@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-
+import Pulse from 'react-reveal/Pulse';
 import './App.css';
 
 export default function App() {
@@ -26,7 +26,7 @@ export default function App() {
         </button>
       <div className="coffees">
         {Array(count).fill("coffee").map(item =>
-          <i aria-hidden="true" class="coffee huge icon"></i>
+          <Pulse><i aria-hidden="true" class="coffee huge icon"></i></Pulse>
         )}
       </div>
     </div>
