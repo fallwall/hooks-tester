@@ -11,7 +11,7 @@ export default function App() {
 
   return (
     <div>
-      <p>You've had {count} {count < 2 ? "cup" : "cups"} of coffee.</p>
+      <h2 className="ui header">You've had {count} {count < 2 ? "cup" : "cups"} of coffee.</h2>
 
       <button
         className="ui animated button"
@@ -22,7 +22,7 @@ export default function App() {
       </button>
       <div className="coffees">
         {Array(count).fill("coffee").map((item, i) =>
-          <Pulse><i aria-hidden="true" key={i} class="coffee huge icon"></i></Pulse>
+          <Pulse><i aria-hidden="true" key={i} className="coffee huge icon"></i></Pulse>
         )}
       </div>
     </div>
