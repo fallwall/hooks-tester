@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+
 import './App.css';
 
 export default function App() {
@@ -11,13 +12,20 @@ export default function App() {
     // Similar to componentDidMount and componentDidUpdate:
     useEffect(() => {
       // Update the document title using the browser API
-      document.title = `You clicked ${count} times`;
+      document.title = `Fool Me ${count} Times`;
     });
+  
+  
 
   return (
     <div>
-      <p>You clicked {count} times</p>
-      <button onClick={() => setCount(count + 1)}>Click Here</button>
+      <p>You've had {count} cups of coffee.</p>
+      
+      <button onClick={() => setCount(count + 1)}>More Coffee</button>
+      <div className="coffees">
+        {Array(count).fill("coffee").map(item =>  <i aria-hidden="true" class="coffee huge icon"></i> )
+        }
+      </div>
     </div>
   )
 
