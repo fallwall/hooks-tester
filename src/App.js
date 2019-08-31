@@ -10,7 +10,12 @@ export default function App() {
   })
 
   return (
-    <div>
+    <div className="app">
+      <div className="cup-container">
+        <div className="cup">
+          <div className="handle"></div>
+        </div>
+      </div>
       <h2 className="ui header">You've had {count} {count < 2 ? "cup" : "cups"} of coffee.</h2>
 
       <button
